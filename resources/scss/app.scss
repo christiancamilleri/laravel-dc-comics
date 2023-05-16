@@ -1,1 +1,202 @@
 @import '~bootstrap/scss/bootstrap';
+
+header {
+    background-color: white;
+    color: black;
+
+    .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        height: 100px;
+    }
+
+
+    .nav-left {
+        #logo {
+            height: 80px;
+        }
+    }
+
+    .nav-center {
+        ul {
+            display: flex;
+            gap: 1em;
+            height: 100%;
+
+            li {
+                text-transform: uppercase;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            li.active {
+                color: #1282f9;
+                border-bottom: 5px solid #1282f9;
+                border-top: 5px solid white;
+            }
+        }
+    }
+
+    .nav-right {
+        input {
+            border: none;
+
+            border-bottom: 2px solid #1282f9;
+        }
+
+        input::placeholder {
+            color: black;
+            opacity: 1;
+            text-align: end;
+        }
+
+
+    }
+}
+
+#jumbo {
+    background-image: url("../images/jumbotron.jpg");
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    .container {
+        .current-series {
+            background-color: #1282f9;
+            color: white;
+            padding: 10px 20px;
+            width: 200px;
+
+            position: absolute;
+            bottom: -20px;
+            left: 20%;
+        }
+    }
+}
+
+main {
+    background-color: black;
+
+    .container {
+
+        .card-container {
+
+            margin-top: 2em;
+
+            .comic-cover {
+                width: 100%;
+
+                aspect-ratio: 1 / 1;
+            }
+
+            span {
+                color: white;
+            }
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+
+            button {
+                background-color: #1282f9;
+                color: white;
+
+                border: none;
+
+                padding: 10px 40px;
+            }
+        }
+    }
+}
+
+.shop-section {
+    background-color: #1282f9;
+    height: 100px;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1em;
+
+        height: 100%;
+
+
+        li {
+
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            text-transform: uppercase;
+
+            img {
+                height: 60px;
+            }
+
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: -17px;
+
+    .container-wrapper {
+        background-image: url("../images/footer-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            height: 400px;
+
+            #list-container {
+                width: 400px;
+                height: 100%;
+                display: flex;
+                flex-flow: column wrap;
+                gap: 1em;
+
+                padding: 50px 0;
+
+                h2 {
+                    text-transform: uppercase;
+                    margin-bottom: .5em;
+                    font-size: 1.3em;
+
+                    color: white;
+
+
+                }
+
+                ul {
+                    padding: 0;
+
+                    li {
+                        font-size: .8rem;
+                        opacity: .6;
+
+                        a {
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
