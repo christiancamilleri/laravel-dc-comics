@@ -3,7 +3,7 @@
 
         <div class="container">
             <div id="list-container">
-                @foreach($footer_lists as $item)
+                @foreach($footer_lists as $item) 
                 <div>
                     <h2>{{ $item['titolo'] }}</h2>
                     <ul>
@@ -14,7 +14,7 @@
                         @endforeach
                     </ul>
                 </div>
-                @endforeach
+                 @endforeach 
 
             </div>
             <div id="img-container">

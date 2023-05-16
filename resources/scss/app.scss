@@ -77,6 +77,8 @@ header {
             position: absolute;
             bottom: -20px;
             left: 20%;
+
+            z-index: 3;
         }
     }
 }
@@ -198,5 +200,22 @@ footer {
 
         }
 
+    }
+}
+
+.thumb-img {
+    width: 200px;
+
+    position: absolute;
+    top: 20%;
+}
+
+.create-section {
+    color: white;
+
+    text-align: center;
+
+    .my-btn {
+        z-index: 3;
     }
 }
