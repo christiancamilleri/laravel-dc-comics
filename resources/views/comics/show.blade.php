@@ -79,6 +79,14 @@
         </div>
     </div>
     <button class="btn btn-primary my-create"><a href="{{route('comics.edit', $comic->id)}}">Modifica fumetto</a> </button>
+    
+    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+    @csrf
+    @method('DELETE')
+
+    <button type="submit" class="mt-3 my-create delete-btn">Elimina fumetto </button>
+    </form>
+
 </div>
 
 @endsection
