@@ -78,6 +78,7 @@
             </div>
         </div>
     </div>
+    <button class="btn btn-primary my-create"><a href="{{route('comics.edit', $comic->id)}}">Modifica fumetto</a> </button>
 </div>
 
 @endsection
