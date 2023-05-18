@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comic;
+use Dotenv\Validator;
+use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
+use Illuminate\Validation\Validator as IlluminateValidationValidator;
+use PHPUnit\Util\Xml\Validator as XmlValidator;
+use Ramsey\Uuid\Rfc4122\Validator as Rfc4122Validator;
 
 class ComicController extends Controller
 {
@@ -113,16 +119,47 @@ class ComicController extends Controller
 
     private function validation($request)
     {
-        $request->validate([
+        // $request->validate([
+        //     'title' => 'required|max:255',
+        //     'description' => 'required',
+        //     'thumb' => 'required|max:255',
+        //     'price' => 'required|max:255',
+        //     'series' => 'required|max:255',
+        //     'sale_date' => 'required',
+        //     'type' => 'required|max:100',
+        //     'artists' => 'required',
+        //     'writers' => 'required',
+        // ]);
+
+        $formData = $request->all();
+
+        $validator = FacadesValidator::make($formData, [
             'title' => 'required|max:255',
             'description' => 'required',
-            'thumb' => 'required|max:255',
-            'price' => 'required|max:255',
+            'thumb' => 'required',
+            'price' => 'required',
             'series' => 'required|max:255',
             'sale_date' => 'required',
             'type' => 'required|max:100',
             'artists' => 'required',
             'writers' => 'required',
-        ]);
+        ], [
+            'title.required' => 'Questo campo non può rimanere vuoto',
+            'title.max' => 'Il contenuto del titolo non può superare i 255 caratteri',
+            'description.required' => 'Questo campo non può rimanere vuoto',
+            'thumb.required' => 'Questo campo non può rimanere vuoto',
+            'price.required' => 'Questo campo non può rimanere vuoto',
+            'series.required' => 'Questo campo non può rimanere vuoto',
+            'series.max' => 'Il contenuto non può superare 255 caratteri',
+            'sale_date.required' => 'Questo campo non può rimanere vuoto',
+            'type.required' => 'Questo campo non può rimanere vuoto',
+            'type.max' => 'Il contenuto non può superare 100 caratteri',
+            'artists.required' => 'Questo campo non può rimanere vuoto',
+            'writers.required' => 'Questo campo non può rimanere vuoto',
+
+
+        ])->validate();
+
+        return $validator;
     }
 }
