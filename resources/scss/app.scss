@@ -216,8 +216,6 @@ footer {
 .create-section {
     color: white;
 
-    text-align: center;
-
     .my-btn {
         margin-bottom: 1em;
     }
@@ -238,4 +236,15 @@ footer {
     background-color: red;
 
     cursor: pointer;
+}
+
+.my-form {
+
+    padding: 2em 0;
+    color: white;
+
+    background-color: black;
+
+    position: relative;
+
 }

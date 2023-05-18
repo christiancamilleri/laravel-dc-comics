@@ -8,7 +8,8 @@
   </head>
   <body>
       
-    <a href="{{route('comics.index')}}"><button class="btn-primary">ACCEDI AL SITO</button></a>
+        <a href="{{route('comics.index')}}"><button class="btn-primary ">ACCEDI AL SITO</button></a>
+    
     
   </body>
   </html>
